@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'conexion.php';
 
 // Procesar la actualización cuando se envía el formulario
@@ -39,12 +39,12 @@ if (!$producto) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/styles.css"> <!-- ✅ ruta corregida -->
+    <link rel="stylesheet" href="css/styles.css"> 
     <title>Editar Producto</title>
 </head>
 <body>
 
-<!-- Corazones flotantes (estético) -->
+<!-- Corazones flotantes -->
 <span class="heart">💖</span>
 <span class="heart">💗</span>
 <span class="heart">💘</span>
@@ -60,21 +60,17 @@ if (!$producto) {
 
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required>
-        <br>
 
         <label for="descripcion">Descripción:</label>
-        <textarea name="descripcion"><?= htmlspecialchars($producto['descripcion']) ?></textarea>
-        <br>
+        <textarea name="descripcion" required><?= htmlspecialchars($producto['descripcion']) ?></textarea>
 
         <label for="precio">Precio:</label>
         <input type="number" step="0.01" name="precio" value="<?= $producto['precio'] ?>" required>
-        <br>
 
         <label for="stock">Stock:</label>
         <input type="number" name="stock" value="<?= $producto['stock'] ?>" required>
-        <br>
 
-        <input type="submit" value="Actualizar Producto"> <!-- ✅ ortografía corregida -->
+        <input type="submit" value="Actualizar Producto">
         <a href="index.php">Cancelar</a>
     </form>
 </div>
