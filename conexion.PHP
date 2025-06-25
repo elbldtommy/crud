@@ -1,13 +1,14 @@
 <?php
 $host = 'localhost';
-$dbnmae = 'crud_productos';
+$dbname = 'crud_productos'; // corregido
 $username = 'root';
 $password = '';
 
 try {
-    $conn = new PDO("mysql;host=$host;dbname=$dbname", $username,$password);
-    $coon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
-}catch(PDOException $e) {
-   echo "error de conexion" . $e->getMessage();
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // corregido
+} catch(PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
+    exit(); // Para evitar que siga ejecutándose el resto del código
 }
 ?>

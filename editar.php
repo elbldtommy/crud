@@ -1,7 +1,7 @@
 <?php
 include 'conexion.php';
 
-// Procesar la actualizacion cuando se envia el formulario
+// Procesar la actualización cuando se envía el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
@@ -36,14 +36,15 @@ if (!$producto) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/kurt_clase/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- ✅ ruta corregida -->
     <title>Editar Producto</title>
 </head>
 <body>
-        <!-- Corazones flotantes -->
+
+<!-- Corazones flotantes (estético) -->
 <span class="heart">💖</span>
 <span class="heart">💗</span>
 <span class="heart">💘</span>
@@ -73,9 +74,10 @@ if (!$producto) {
         <input type="number" name="stock" value="<?= $producto['stock'] ?>" required>
         <br>
 
-        <input type="submit" value="Acualizar Producto">
+        <input type="submit" value="Actualizar Producto"> <!-- ✅ ortografía corregida -->
         <a href="index.php">Cancelar</a>
     </form>
 </div>
+
 </body>
 </html>

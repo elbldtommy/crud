@@ -8,10 +8,11 @@ if (isset($_GET['id'])) {
     $res = $conn->prepare($sql);
     $res->execute([$id]);
 
-    header("Location: index.php?succes=Producto eliminar");
+    header("Location: index.php?success=Producto eliminado");
     exit();
 }
 
-header("Location: index.php");
+// Si no se recibe ID válido
+header("Location: index.php?error=ID no especificado");
 exit();
 ?>
