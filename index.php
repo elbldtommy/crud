@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de productos</title>
     <link rel="stylesheet" href="css/styles.css">
-
 </head>
 <body>
 
@@ -29,14 +28,14 @@
 $sql = "SELECT * FROM productos";
 $res = $conn->query($sql);
 
-while ($fila = $res->fetch(PDO::FETCH_ASSOC)){
+while ($fila = $res->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>
         <td>" . htmlspecialchars($fila['id']) . "</td>
         <td>" . htmlspecialchars($fila['nombre']) . "</td>
         <td>" . htmlspecialchars($fila['descripcion']) . "</td>
         <td>" . htmlspecialchars($fila['precio']) . "</td>
         <td>" . htmlspecialchars($fila['stock']) . "</td>
-        <td>" . htmlspecialchars($fila['fecha creacion']) . "</td>
+        <td>" . (isset($fila['fecha_creacion']) ? htmlspecialchars($fila['fecha_creacion']) : '') . "</td>
         <td>
             <a href='editar.php?id={$fila['id']}'>Editar</a> |
             <a href='eliminar.php?id={$fila['id']}' onclick='return confirm(\"¿Estás seguro?\")'>Eliminar</a>
@@ -48,4 +47,3 @@ while ($fila = $res->fetch(PDO::FETCH_ASSOC)){
 
 </body>
 </html>
-
