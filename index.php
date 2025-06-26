@@ -10,8 +10,10 @@
 <body>
 
 <h1>Lista de productos</h1>
-<a href="crear.php">Agregar Nuevo Producto</a>
-<br><br>
+
+<div class="boton-centrado">
+    <a class="boton-nuevo" href="crear.php">Agregar Nuevo Producto</a>
+</div>
 
 <table>
 <tr>
